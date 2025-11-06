@@ -1,0 +1,51 @@
+name: Site Deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'kikuai-site/**'
+  tags:
+    - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+          cache-dependency-path: kikuai-site/package.json
+
+      - name: Install dependencies
+        working-directory: kikuai-site
+        run: npm ci
+
+      - name: Build
+        working-directory: kikuai-site
+        run: npm run build
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/key
+          chmod 600 ~/.ssh/key
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/key -o StrictHostKeyChecking=no" \
+            kikuai-site/dist/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/srv/kikuai-site/
+
+      - name: Reload Caddy
+        run: |
+          ssh -i ~/.ssh/key -o StrictHostKeyChecking=no \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            'cd ~/kikuai-platform && docker compose exec -T caddy caddy reload --config /etc/caddy/Caddyfile'
