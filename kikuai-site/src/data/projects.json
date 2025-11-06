@@ -1,0 +1,44 @@
+[
+  {
+    "id": "patas",
+    "name": "PATAS",
+    "oneLiner": "Pattern Analysis Tool for Automated Systems",
+    "status": "private",
+    "href": "https://patas.kikuai.dev"
+  },
+  {
+    "id": "tas",
+    "name": "TAS",
+    "oneLiner": "Text Analysis Service for content processing",
+    "status": "private",
+    "href": "https://tas.kikuai.dev"
+  },
+  {
+    "id": "docstripper",
+    "name": "DocStripper",
+    "oneLiner": "Extract and clean text from documents",
+    "status": "live",
+    "href": "TODO: Add DocStripper URL"
+  },
+  {
+    "id": "deepstabilizer",
+    "name": "DeepStabilizer",
+    "oneLiner": "AI-powered video stabilization tool",
+    "status": "soon",
+    "href": null
+  },
+  {
+    "id": "spamexplain",
+    "name": "SpamExplain",
+    "oneLiner": "Explain why emails are marked as spam",
+    "status": "soon",
+    "href": null
+  },
+  {
+    "id": "broken-link-checker",
+    "name": "Broken Link Checker",
+    "oneLiner": "Find and report broken links on websites",
+    "status": "soon",
+    "href": null
+  }
+]

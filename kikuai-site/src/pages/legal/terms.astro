@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Terms of Service" description="Terms of service for KikuAI Lab">
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="mb-10">Terms of Service</h1>
+      
+      <div class="text-content space-y-8">
+        <p class="text-lg text-[var(--color-muted-foreground)]">
+          <strong class="text-[var(--color-foreground)]">Last updated:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+        
+        <section>
+          <h2 class="mb-6">Content "As Is"</h2>
+          <p class="text-lg text-[var(--color-muted-foreground)]">
+            All content on this website is provided "as is" without any warranties, express or implied. 
+            We make no representations or warranties regarding the accuracy, completeness, or reliability 
+            of any information on this site.
+          </p>
+        </section>
+        
+        <section>
+          <h2 class="mb-6">No Warranties</h2>
+          <p class="text-lg text-[var(--color-muted-foreground)]">
+            To the fullest extent permitted by law, KikuAI Lab disclaims all warranties, including but 
+            not limited to warranties of merchantability, fitness for a particular purpose, and 
+            non-infringement. We do not guarantee that the website will be available, uninterrupted, 
+            or error-free.
+          </p>
+        </section>
+        
+        <section>
+          <h2 class="mb-6">External Links</h2>
+          <p class="text-lg text-[var(--color-muted-foreground)]">
+            This website may contain links to external websites and services. We are not responsible 
+            for the content, privacy practices, or terms of service of any third-party websites. 
+            Your use of external websites is at your own risk.
+          </p>
+        </section>
+        
+        <section>
+          <h2 class="mb-6">Contact</h2>
+          <p class="text-lg text-[var(--color-muted-foreground)]">
+            If you have any questions about these terms, please contact us at 
+            <a href="mailto:admin@kikuai.dev" class="text-[var(--color-accent)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2">admin@kikuai.dev</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+

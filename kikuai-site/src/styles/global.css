@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #9a7df9; /* Lighter purple for better contrast (≥4.5:1 on dark) */
+  --color-accent-dark: #5b3df5; /* Original darker purple for buttons */
+  
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #a0a0a0;
+  --color-border: #2a2a2a;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Typography: max-width ~72ch for readability */
+p, li, blockquote {
+  max-width: 72ch;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Links with visible hover and focus states */
+a {
+  transition: opacity 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+/* Accent color links (better contrast) */
+a[class*="text-[var(--color-accent)]"] {
+  color: var(--color-accent);
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Buttons and interactive elements */
+button, 
+[role="button"],
+a[class*="button"],
+a[class*="btn"] {
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover,
+[role="button"]:hover,
+a[class*="button"]:hover,
+a[class*="btn"]:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+a[class*="button"]:focus-visible,
+a[class*="btn"]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button:active,
+[role="button"]:active,
+a[class*="button"]:active,
+a[class*="btn"]:active {
+  transform: translateY(0);
+}
+
+/* Focus visible for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #5b3df5; /* Darker purple for better contrast with white text */
+  color: var(--color-foreground);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Container max-width for text content */
+.container {
+  max-width: 1200px;
+}
+
+/* Text content containers */
+.text-content,
+.prose {
+  max-width: 72ch;
+}
+
+/* Grid spacing improvements */
+.grid {
+  gap: 1.5rem;
+}
+
+/* Card hover states */
+[class*="border"]:hover {
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  transform: translateY(-2px);
+}

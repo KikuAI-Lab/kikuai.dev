@@ -1,0 +1,53 @@
+name: Playwright E2E Tests
+
+on:
+  pull_request:
+    paths:
+      - 'kikuai-site/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'kikuai-site/**'
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+          cache-dependency-path: kikuai-site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./kikuai-site
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        working-directory: ./kikuai-site
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        working-directory: ./kikuai-site
+        run: npm run build
+
+      - name: Run Playwright tests
+        working-directory: ./kikuai-site
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: http://localhost:4321
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: kikuai-site/playwright-report/
+          retention-days: 30
+

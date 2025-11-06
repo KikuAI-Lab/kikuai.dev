@@ -1,0 +1,91 @@
+name: kikuai-platform
+
+services:
+  caddy:
+    build:
+      context: ./caddy
+      dockerfile: Dockerfile
+    image: kikuai/caddy:with-cloudflare
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+      - /srv/kikuai-site:/www:ro
+    restart: unless-stopped
+    networks:
+      - public
+      - internal
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    volumes:
+      - uptime_kuma:/app/data
+    networks:
+      - internal
+    expose:
+      - "3001"
+
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   restart: unless-stopped
+  #   networks: [internal]
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #   environment:
+  #     - GF_SERVER_ROOT_URL=https://grafana.kikuai.dev
+  #   # Reverse proxy via Caddy will be added later
+
+  # prometheus:
+  #   image: prom/prometheus:latest
+  #   restart: unless-stopped
+  #   networks: [internal]
+  #   volumes:
+  #     - prometheus_data:/prometheus
+  #   # Reverse proxy via Caddy will be added later
+
+  # loki:
+  #   image: grafana/loki:2.9.8
+  #   restart: unless-stopped
+  #   networks: [internal]
+
+  # promtail:
+  #   image: grafana/promtail:2.9.8
+  #   restart: unless-stopped
+  #   networks: [internal]
+
+  # postgres:
+  #   image: postgres:16
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks: [internal]
+
+  # redis:
+  #   image: redis:7-alpine
+  #   restart: unless-stopped
+  #   networks: [internal]
+
+volumes:
+  caddy_data: {}
+  caddy_config: {}
+  uptime_kuma: {}
+  # grafana_data: {}
+  # prometheus_data: {}
+  # postgres_data: {}
+
+networks:
+  public:
+    driver: bridge
+  internal:
+    driver: bridge
+

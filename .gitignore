@@ -1,0 +1,32 @@
+# Node
+node_modules/
+.next/
+
+# Python
+__pycache__/
+.venv/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+
+# Ansible
+*.retry
+
+# Secrets and env
+.env
+.env.*
+secrets/
+.secrets/
+.age-key*
+
+# Logs
+logs/
+*.log
+
+# MacOS
+.DS_Store
+

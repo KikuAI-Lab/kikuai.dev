@@ -1,0 +1,38 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    paths:
+      - 'kikuai-site/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'kikuai-site/**'
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+          cache-dependency-path: kikuai-site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./kikuai-site
+        run: npm ci
+
+      - name: Build site
+        working-directory: ./kikuai-site
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        working-directory: ./kikuai-site
+        run: npx lhci autorun
+

@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import projectsData from '../data/projects.json';
+
+const siteUrl = 'https://kikuai.dev';
+
+const statusColors = {
+  live: 'bg-green-500/20 text-green-400 border-green-500/30',
+  private: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
+  soon: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+};
+---
+
+<Layout title="Projects" description="KikuAI Lab projects and micro-products" ogImage={`${siteUrl}/og-image.png`}>
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="mb-10">Projects</h1>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projectsData.map((project) => (
+        <div class="p-6 border border-[var(--color-border)] rounded-lg hover:border-[var(--color-accent)]">
+          <div class="flex items-start justify-between mb-4">
+            <h2 class="text-2xl font-semibold">{project.name}</h2>
+            <span class={`px-2 py-1 text-xs font-medium rounded border ${statusColors[project.status as keyof typeof statusColors]}`}>
+              {project.status}
+            </span>
+          </div>
+          <p class="text-[var(--color-muted-foreground)] mb-4">{project.oneLiner}</p>
+          {(project.status === 'live' || project.status === 'private') && project.href && !project.href.startsWith('TODO') && (
+            <a 
+              href={project.href} 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[var(--color-accent)] hover:underline inline-flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
+              Visit →
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
