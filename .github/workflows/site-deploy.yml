@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'kikuai-site/**'
+      - '.github/workflows/site-deploy.yml'
   tags:
     - 'v*'
 
