@@ -1,5 +1,24 @@
 # Work Log
 
+## 2025-11-06T17:05:00Z
+
+Completed tasks:
+- ✅ GitHub Actions workflow for site deployment:
+  - **Created workflow**: `.github/workflows/site-deploy.yml`
+    - Triggers: push to `main` (when `kikuai-site/**` changes), tags `v*`
+    - Steps: checkout → setup Node.js LTS → `npm ci` → `npm run build` → rsync to `/srv/kikuai-site/` → reload Caddy
+  - **GitHub Secrets configured**:
+    - `SSH_HOST`: `46.62.196.222`
+    - `SSH_USER`: `kiku`
+    - `SSH_KEY`: Private SSH key (from `~/.ssh/kikuai_prod`)
+  - **Repository**: `https://github.com/kiku-jw/kikuai.dev`
+  - **Workflow runs**: 
+    - Latest run: https://github.com/kiku-jw/kikuai.dev/actions/runs/19136578972
+    - Status: Investigating failure (workflow completes but shows failure - may be related to path filters or job execution)
+  - **Status**: Workflow file created, secrets configured, workflow triggers on push. Need to investigate and fix failure cause.
+
+**Note**: Workflow is configured and triggers correctly, but runs are failing. Investigation needed to identify root cause (possibly related to path filters, job execution, or missing dependencies).
+
 ## 2025-11-06T17:00:00Z
 
 Completed tasks:
