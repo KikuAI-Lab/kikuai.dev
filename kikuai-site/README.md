@@ -2,6 +2,9 @@
 
 Static marketing site for KikuAI Lab built with Astro + Tailwind CSS.
 
+[![Playwright E2E Tests](https://github.com/kiku-jw/kikuai.dev/actions/workflows/playwright.yml/badge.svg)](https://github.com/kiku-jw/kikuai.dev/actions/workflows/playwright.yml)
+[![Lighthouse CI](https://github.com/kiku-jw/kikuai.dev/actions/workflows/lighthouse-ci.yml/badge.svg)](https://github.com/kiku-jw/kikuai.dev/actions/workflows/lighthouse-ci.yml)
+
 ## Features
 
 - Dark theme with purple accent (#5b3df5)

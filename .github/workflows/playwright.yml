@@ -40,8 +40,6 @@ jobs:
       - name: Run Playwright tests
         working-directory: ./kikuai-site
         run: npm run test:e2e
-        env:
-          PLAYWRIGHT_TEST_BASE_URL: http://localhost:4321
 
       - name: Upload test results
         if: always()
