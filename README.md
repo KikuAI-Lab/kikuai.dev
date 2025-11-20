@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://kikuai.dev/brand/kikuai-logo-optimized.png" alt="KikuAI Lab" width="120" height="120">
+</div>
+
 # KikuAI Lab — Product Hub
 
 > Minimalist dark-themed product hub and portfolio showcasing autonomous AI APIs for data analysis and automation.
@@ -43,6 +47,15 @@ npm run dev
 ## 📄 License
 
 See individual product repositories for license information.
+
+## 💝 Support
+
+Support this project and help keep it free:
+
+- ☕ [Buy Me a Coffee](https://buymeacoffee.com/kiku)
+- ☕ [Ko-fi](https://ko-fi.com/kiku_jw)
+- 🙏 [Thanks.dev](https://thanks.dev/d/gh/kiku-jw)
+- 💬 [Discord](https://discord.gg/4Kxs97JvsU)
 
 ---
 
