@@ -1,12 +1,31 @@
-# KikuAI Lab
+# KikuAI Lab — Product Hub
 
-Autonomous AI products for data analysis and automation.
+> Minimalist dark-themed product hub and portfolio showcasing autonomous AI APIs for data analysis and automation.
 
-## Site
+[![Nuxt](https://img.shields.io/badge/Nuxt-3.0-00DC82?style=flat-square&logo=nuxt.js&logoColor=white)](https://nuxt.com)
+[![Vue](https://img.shields.io/badge/Vue-3.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-The main site (`kikuai.dev`) is built with **Nuxt 3** and deployed automatically via **Cloudflare Pages**.
+A modern, minimalist product hub featuring a dark industrial cyberpunk design. Perfect for showcasing API products, tools, and services with an emphasis on functional minimalism and intuitive user experience.
 
-### Local Development
+**Live Site:** [kikuai.dev](https://kikuai.dev)
+
+## 📁 Project Structure
+
+```
+.
+├── kikuai-site-nuxt/    # Main Nuxt 3 application
+│   ├── pages/          # Route pages
+│   ├── components/     # Vue components
+│   ├── server/         # API routes
+│   └── public/         # Static assets
+└── README.md           # This file
+```
+
+## 🚀 Quick Start
+
+See [kikuai-site-nuxt/README.md](./kikuai-site-nuxt/README.md) for detailed setup instructions.
 
 ```bash
 cd kikuai-site-nuxt
@@ -14,31 +33,17 @@ npm install
 npm run dev
 ```
 
-### Deployment
+## 🎨 Design Philosophy
 
-Deployment is automatic via Cloudflare Pages on push to `main` branch.
+- **Functional Minimalism** — Utility over vanity
+- **Dark Industrial Cyberpunk** — Modern, sleek aesthetic
+- **Intuitive UX** — Easy to understand and navigate
+- **Performance First** — Fast loading and smooth interactions
 
-- **Build command:** `cd kikuai-site-nuxt && npm ci && npm run build`
-- **Output directory:** `kikuai-site-nuxt/.output/public`
-- **Node version:** `lts/*`
-
-### Project Structure
-
-```
-kikuai-site-nuxt/     # Nuxt 3 site (main)
-  ├── pages/          # Routes
-  ├── components/     # Vue components
-  ├── server/         # API routes
-  ├── public/         # Static assets
-  └── prisma/         # Database schema
-```
-
-## Documentation
-
-- **Site docs:** `kikuai-site-nuxt/docs/`
-- **Setup guides:** `kikuai-site-nuxt/docs/setup-keys.md`
-- **Changelog:** See `WORKLOG.md` for development history
-
-## License
+## 📄 License
 
 See individual product repositories for license information.
+
+---
+
+Built with ❤️ by [KikuAI Lab](https://kikuai.dev)
