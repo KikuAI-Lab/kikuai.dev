@@ -27,13 +27,6 @@ export default defineNuxtConfig({
         { rel: 'mask-icon', href: '/brand/maskable-icon.png', color: '#17191d' },
         { rel: 'manifest', href: '/manifest.json' },
         { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', href: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2' }
-      ],
-      script: [
-        {
-          defer: true,
-          'data-domain': 'kikuai.dev',
-          src: 'https://plausible.io/js/script.js'
-        }
       ]
     }
   },
