@@ -1,6 +1,0 @@
-creation_rules:
-  - path_regex: secrets/.*\.enc\.ya?ml$
-    key_groups:
-      - age:
-          - age1exampleexampleexampleexampleexampleexampleexampleXXXX
-
