@@ -151,7 +151,7 @@ function getReleaseDate(product: Product): Date | null {
 const allProducts = computed(() => {
   const combined = [...productsData, ...toolsData] as Product[]
   
-  return filtered.sort((a, b) => {
+  return combined.sort((a, b) => {
     // Live products first (ReliAPI)
     if (a.status === 'live' && b.status !== 'live') return -1
     if (a.status !== 'live' && b.status === 'live') return 1
