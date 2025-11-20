@@ -116,15 +116,6 @@ See individual product repositories for license information.
 - **Live Site:** [kikuai.dev](https://kikuai.dev)
 - **Organization:** [KikuAI-Lab](https://github.com/KikuAI-Lab)
 
-## 💝 Support
-
-Support this project and help keep it free:
-
-- ☕ [Buy Me a Coffee](https://buymeacoffee.com/kiku)
-- ☕ [Ko-fi](https://ko-fi.com/kiku_jw)
-- 🙏 [Thanks.dev](https://thanks.dev/d/gh/kiku-jw)
-- 💬 [Discord](https://discord.gg/4Kxs97JvsU)
-
 ---
 
 Built with ❤️ by [KikuAI Lab](https://kikuai.dev)
