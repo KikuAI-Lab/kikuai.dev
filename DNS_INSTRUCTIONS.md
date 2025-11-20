@@ -1,22 +1,32 @@
 # DNS Configuration for Namecheap
 
-After deploying to Vercel, configure your domain `kikuai.dev` in Namecheap.
+**⚠️ ВАЖНО: Сейчас домен использует Cloudflare nameservers, поэтому сайт идет через Cloudflare CDN и показывает старую версию.**
 
-## Option 1: Use Vercel Nameservers (Recommended)
+Чтобы полностью перейти на Vercel, нужно изменить nameservers в Namecheap.
+
+## Шаг 1: Изменить Nameservers в Namecheap
 
 1. Go to Namecheap → Domain List → Manage `kikuai.dev`
 2. Go to **Advanced DNS** tab
 3. Scroll down to **Nameservers** section
-4. Select **Custom DNS**
-5. Add these nameservers:
+4. Сейчас там: `kristina.ns.cloudflare.com` и `clyde.ns.cloudflare.com`
+5. Select **Custom DNS**
+6. Замените на Vercel nameservers:
    - `ns1.vercel-dns.com`
    - `ns2.vercel-dns.com`
-6. Save changes
+7. Save changes
 
-Then in Vercel dashboard:
-1. Go to your project → Settings → Domains
-2. Add `kikuai.dev` and `www.kikuai.dev`
-3. Vercel will automatically configure DNS
+## Шаг 2: Настроить домены в Vercel
+
+1. Go to Vercel Dashboard → Your Project → Settings → Domains
+2. Add `kikuai.dev` and `www.kikuai.dev` (если еще не добавлены)
+3. Vercel автоматически настроит DNS записи
+
+## Шаг 3: Удалить Cloudflare (опционально)
+
+После изменения nameservers на Vercel, Cloudflare больше не будет обслуживать ваш домен. Вы можете:
+- Удалить домен из Cloudflare Dashboard (если больше не нужен)
+- Или оставить как есть - он просто не будет использоваться
 
 ## Option 2: Use A/CNAME Records
 
