@@ -1,8 +1,8 @@
 <div align="center">
   <img src="https://kikuai.dev/brand/kikuai-logo-optimized.png" alt="KikuAI Lab" width="120" height="120">
+  
+  # KikuAI Lab — Product Hub
 </div>
-
-# KikuAI Lab — Product Hub
 
 > Minimalist dark-themed product hub and portfolio showcasing autonomous AI APIs for data analysis and automation.
 
