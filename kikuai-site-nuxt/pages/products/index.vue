@@ -38,16 +38,10 @@ function getReleaseDate(product: Product): Date | null {
 }
 
 // Combine products and tools, sorted by release date
-// Temporarily hide TAS and PATAS
 const allProducts = computed(() => {
   const combined = [...productsData, ...toolsData] as Product[]
   
-  // Filter out TAS and PATAS (temporary)
-  const filtered = combined.filter(product => 
-    product.slug !== 'tas' && product.slug !== 'patas'
-  )
-  
-  return filtered.sort((a, b) => {
+  return combined.sort((a, b) => {
     // Live products first (ReliAPI)
     if (a.status === 'live' && b.status !== 'live') return -1
     if (a.status !== 'live' && b.status === 'live') return 1
