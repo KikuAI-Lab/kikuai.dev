@@ -1,5 +1,18 @@
 {
   "framework": "nuxtjs",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "kikuai.dev"
+        }
+      ],
+      "destination": "https://www.kikuai.dev/",
+      "permanent": true
+    }
+  ]
 }
 
