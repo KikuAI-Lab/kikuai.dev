@@ -1,5 +1,4 @@
-// Lazy Redis import to avoid loading in Cloudflare Workers for static pages
-// ioredis uses Node.js modules that don't work in Workers
+// Lazy Redis import for Vercel serverless functions
 
 let Redis: any = null
 let redis: any = null
@@ -10,13 +9,12 @@ export function getRedis() {
   }
   
   // Only import ioredis when actually needed (runtime, not build)
-  // In Cloudflare Workers, this will fail gracefully
   if (!Redis) {
     try {
-      // Dynamic import to avoid bundling in worker
+      // Dynamic import for serverless compatibility
       Redis = require('ioredis')
     } catch (e) {
-      // ioredis not available in Cloudflare Workers
+      // ioredis not available
       // Return a mock implementation
       console.warn('Redis (ioredis) not available, using fallback')
       return {
@@ -51,8 +49,8 @@ export async function rateLimit(
   const redisClient = getRedis()
   const windowKey = `rate_limit:${key}`
   
-  // If Redis is not available (Cloudflare Workers), allow all requests
-  // In production, you'd want to use Cloudflare KV or Durable Objects
+  // If Redis is not available, allow all requests
+  // In production, configure Redis URL in Vercel environment variables
   if (!redisClient || typeof redisClient.incr !== 'function') {
     return {
       allowed: true,

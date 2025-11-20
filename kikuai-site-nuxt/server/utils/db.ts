@@ -1,5 +1,4 @@
-// Polyfill __dirname for Cloudflare Pages
-import './cloudflare-polyfill'
+// Database client for Vercel
 
 import { PrismaClient } from '@prisma/client'
 
@@ -26,7 +25,7 @@ function getPrisma(): PrismaClient {
   const dbUrl = process.env.DATABASE_URL
   if (!dbUrl) {
     console.error('[Prisma] DATABASE_URL is not set! Database operations will fail.')
-    console.error('[Prisma] Please set DATABASE_URL environment variable in Cloudflare Pages.')
+    console.error('[Prisma] Please set DATABASE_URL environment variable in Vercel.')
   } else {
     console.log('[Prisma] DATABASE_URL is set:', dbUrl.substring(0, 30) + '...')
   }

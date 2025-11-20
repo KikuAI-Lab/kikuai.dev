@@ -10,21 +10,17 @@ import { config } from 'dotenv'
 config()
 
 const requiredEnvVars = [
+  'OPENROUTER_API_KEY'
+]
+
+const optionalEnvVars = [
   'DATABASE_URL',
-  'SUPABASE_URL',
-  'SUPABASE_KEY',
-  'SUPABASE_SERVICE_ROLE_KEY',
+  'REDIS_URL',
   'PADDLE_VENDOR_ID',
   'PADDLE_API_KEY',
   'PADDLE_PUBLIC_KEY',
   'PADDLE_WEBHOOK_SECRET',
-  'REDIS_URL'
-]
-
-const optionalEnvVars = [
-  'TURNSTILE_SITE_KEY',
-  'TURNSTILE_SECRET_KEY',
-  'API_SECRET_KEY' // Опционально, для внутренних API
+  'API_SECRET_KEY'
 ]
 
 console.log('🔍 Checking environment configuration...\n')
@@ -75,10 +71,10 @@ if (dbUrl && !dbUrl.startsWith('postgresql://')) {
   hasWarnings = true
 }
 
-// SUPABASE_URL
-const supabaseUrl = process.env.SUPABASE_URL
-if (supabaseUrl && !supabaseUrl.startsWith('https://') && !supabaseUrl.includes('.supabase.co')) {
-  console.log('  ⚠️  SUPABASE_URL should be a valid Supabase URL')
+// OPENROUTER_API_KEY
+const openrouterKey = process.env.OPENROUTER_API_KEY
+if (openrouterKey && !openrouterKey.startsWith('sk-or-v1-')) {
+  console.log('  ⚠️  OPENROUTER_API_KEY should start with "sk-or-v1-"')
   hasWarnings = true
 }
 

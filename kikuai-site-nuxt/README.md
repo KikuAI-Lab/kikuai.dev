@@ -10,7 +10,7 @@
 [![Vue](https://img.shields.io/badge/Vue-3.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
 
 A modern, minimalist product hub featuring a dark industrial cyberpunk design. Perfect for showcasing API products, tools, and services with an emphasis on functional minimalism and intuitive user experience.
 
@@ -20,7 +20,7 @@ A modern, minimalist product hub featuring a dark industrial cyberpunk design. P
 - 🚀 **Modern Stack** — Nuxt 3, Vue 3, TypeScript, Tailwind CSS
 - 💬 **Interactive Chat** — Built-in terminal-style chat interface with LLM integration
 - 📱 **Responsive** — Fully responsive design optimized for all devices
-- ⚡ **Fast** — Optimized for performance with Cloudflare Pages deployment
+- ⚡ **Fast** — Optimized for performance with Vercel deployment
 - 🔒 **Secure** — Environment-based configuration, no secrets in code
 
 ## 🛠️ Tech Stack
@@ -28,7 +28,7 @@ A modern, minimalist product hub featuring a dark industrial cyberpunk design. P
 - **Framework:** [Nuxt 3](https://nuxt.com) (SSR)
 - **UI:** [Vue 3](https://vuejs.org) + [Tailwind CSS](https://tailwindcss.com)
 - **Language:** [TypeScript](https://www.typescriptlang.org)
-- **Deployment:** [Cloudflare Pages](https://pages.cloudflare.com)
+- **Deployment:** [Vercel](https://vercel.com)
 - **Database:** PostgreSQL (via Prisma)
 - **Styling:** Custom CSS with CSS variables for theming
 
@@ -100,12 +100,42 @@ This project follows a **functional minimalism** approach:
 
 ## 🚢 Deployment
 
-The site is automatically deployed to Cloudflare Pages on push to the `main` branch.
+The site is automatically deployed to Vercel on push to the `main` branch.
 
-**Build Settings:**
-- **Build command:** `cd kikuai-site-nuxt && npm ci && npm run build`
-- **Output directory:** `kikuai-site-nuxt/.output/public`
-- **Node version:** `lts/*`
+**Vercel Configuration:**
+- **Framework Preset:** Nuxt.js
+- **Build Command:** `npm run build`
+- **Output Directory:** `.output/public`
+- **Install Command:** `npm install`
+
+### Setting up Vercel
+
+1. Connect your GitHub repository to Vercel
+2. Vercel will auto-detect Nuxt.js framework
+3. Add environment variables in Vercel dashboard:
+   - `OPENROUTER_API_KEY` (required for chat feature)
+   - `DATABASE_URL` (optional, for API features)
+   - `REDIS_URL` (optional, for rate limiting)
+4. Deploy!
+
+### DNS Configuration (Namecheap)
+
+After deploying to Vercel, you'll get a domain like `your-project.vercel.app`. To use your custom domain `kikuai.dev`:
+
+1. In Vercel dashboard, go to your project → Settings → Domains
+2. Add `kikuai.dev` and `www.kikuai.dev`
+3. Vercel will provide DNS records to add in Namecheap:
+
+**Add these DNS records in Namecheap:**
+
+| Type | Host | Value | TTL |
+|------|------|-------|-----|
+| A | @ | `76.76.21.21` | Automatic |
+| CNAME | www | `cname.vercel-dns.com` | Automatic |
+
+Or use Vercel's nameservers (recommended):
+- `ns1.vercel-dns.com`
+- `ns2.vercel-dns.com`
 
 ## 📄 License
 

@@ -8,8 +8,7 @@ export default defineNuxtConfig({
   },
   css: ['~/app.css'],
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/turnstile'
+    '@nuxtjs/tailwindcss'
   ],
   runtimeConfig: {
     // Private keys (server-side only)
@@ -39,33 +38,13 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'vercel',
     prerender: {
       routes: ['/'],
       crawlLinks: false,
-      failOnError: false // Don't fail build on prerender errors
+      failOnError: false
     },
     compressPublicAssets: true,
-    // Add polyfill for __dirname and string_decoder in worker bundle
-    rollupConfig: {
-      output: {
-        banner: `
-          if (typeof __dirname === 'undefined') {
-            globalThis.__dirname = '';
-            globalThis.__filename = '';
-          }
-          // Polyfill for string_decoder (used by Prisma/ioredis)
-          if (typeof globalThis.string_decoder === 'undefined') {
-            globalThis.string_decoder = {
-              StringDecoder: function() {
-                this.write = function() { return ''; };
-                this.end = function() { return ''; };
-              }
-            };
-          }
-        `
-      }
-    },
     routeRules: {
       '/**': {
         headers: {
@@ -106,11 +85,5 @@ export default defineNuxtConfig({
       }
     }
   },
-  ssr: true,
-  vite: {
-    define: {
-      '__dirname': JSON.stringify(''),
-      '__filename': JSON.stringify('')
-    }
-  }
+  ssr: true
 })
