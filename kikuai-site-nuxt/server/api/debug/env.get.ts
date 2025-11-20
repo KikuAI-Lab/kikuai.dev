@@ -8,6 +8,8 @@ export default defineEventHandler((event) => {
     runtimeConfig: {
       public: config.public || {}
     },
-    note: 'Supabase configuration has been removed from this project'
+    env: {
+      hasOpenRouterKey: !!config.openrouterApiKey
+    }
   }
 })

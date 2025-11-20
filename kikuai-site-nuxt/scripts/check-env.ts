@@ -13,13 +13,7 @@ const requiredEnvVars = [
   'OPENROUTER_API_KEY'
 ]
 
-const optionalEnvVars = [
-  'PADDLE_VENDOR_ID',
-  'PADDLE_API_KEY',
-  'PADDLE_PUBLIC_KEY',
-  'PADDLE_WEBHOOK_SECRET',
-  'API_SECRET_KEY'
-]
+const optionalEnvVars: string[] = []
 
 console.log('🔍 Checking environment configuration...\n')
 
@@ -69,13 +63,6 @@ if (openrouterKey && !openrouterKey.startsWith('sk-or-v1-')) {
   hasWarnings = true
 }
 
-// PADDLE keys
-const paddleVendorId = process.env.PADDLE_VENDOR_ID
-if (paddleVendorId && !/^\d+$/.test(paddleVendorId)) {
-  console.log('  ⚠️  PADDLE_VENDOR_ID should be numeric')
-  hasWarnings = true
-}
-
 // Summary
 console.log('\n' + '='.repeat(50))
 if (hasErrors) {
@@ -89,7 +76,6 @@ if (hasErrors) {
   process.exit(0)
 } else {
   console.log('✅ Configuration looks good!')
-  console.log('   You can proceed with database setup.')
   process.exit(0)
 }
 

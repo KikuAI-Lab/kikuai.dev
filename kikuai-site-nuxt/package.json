@@ -10,7 +10,6 @@
     "analyze": "nuxt build --analyze",
     "size:budget": "node scripts/size-budget.mjs",
     "check:env": "tsx scripts/check-env.ts",
-    "generate:api-secret": "tsx scripts/generate-api-secret.ts",
     "test": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
