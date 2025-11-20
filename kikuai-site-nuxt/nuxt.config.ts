@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     routeRules: {
       '/**': {
         headers: {
-          'cache-control': 'public, max-age=0, s-maxage=1800'
+          'cache-control': 'no-cache, no-store, must-revalidate'
         }
       },
       '/assets/**': {
