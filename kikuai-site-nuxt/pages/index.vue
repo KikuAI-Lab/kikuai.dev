@@ -104,18 +104,24 @@
             <span class="log-time">{{ currentTime }}</span>
             <span class="log-info">PROCESSING...</span>
           </div>
-          <div v-else class="log-line active">
+          <div v-else class="log-line active input-line">
             <span class="log-time">{{ currentTime }}</span>
-            <span class="log-info">Type your question here →</span>
             <form @submit.prevent="sendMessage" class="chat-input-form">
-              <input
-                v-model="userInput"
-                type="text"
-                class="chat-input"
-                placeholder=""
-                :disabled="isLoading"
-                ref="chatInput"
-              />
+              <div class="chat-input-wrapper">
+                <input
+                  v-model="userInput"
+                  type="text"
+                  class="chat-input"
+                  placeholder="Type your question here..."
+                  :disabled="isLoading"
+                  ref="chatInput"
+                />
+                <button type="submit" class="chat-submit-btn" :disabled="isLoading || !userInput.trim()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                  </svg>
+                </button>
+              </div>
             </form>
       </div>
     </div>
@@ -1048,9 +1054,36 @@ useHead({
   color: var(--accent);
 }
 
+.log-line.input-line {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
 .chat-input-form {
   display: flex;
   flex: 1;
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+
+.chat-input-wrapper:focus-within {
+  border-color: var(--line-bright);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(237, 237, 237, 0.1);
 }
 
 .chat-input {
@@ -1062,12 +1095,46 @@ useHead({
   flex: 1;
   padding: 0;
   outline: none;
-  margin-left: 0.5rem;
+  width: 100%;
+}
+
+.chat-input::placeholder {
+  color: var(--text-dim);
+  opacity: 0.6;
 }
 
 .chat-input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.chat-submit-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.chat-submit-btn:hover:not(:disabled) {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chat-submit-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.chat-submit-btn svg {
+  width: 18px;
+  height: 18px;
 }
 
 @media (max-width: 768px) {
@@ -1095,6 +1162,29 @@ useHead({
   
   .main-container {
     padding: 2rem 1.5rem;
+  }
+  
+  .log-line.input-line {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  
+  .chat-input-wrapper {
+    padding: 1rem;
+    min-height: 56px;
+  }
+  
+  .chat-input {
+    font-size: 1rem;
+  }
+  
+  .chat-submit-btn {
+    padding: 0.75rem;
+  }
+  
+  .chat-submit-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
