@@ -6,10 +6,11 @@
 
 > Minimalist dark-themed product hub and portfolio showcasing autonomous AI APIs for data analysis and automation.
 
-[![Nuxt](https://img.shields.io/badge/Nuxt-3.0-00DC82?style=flat-square&logo=nuxt.js&logoColor=white)](https://nuxt.com)
-[![Vue](https://img.shields.io/badge/Vue-3.0-4FC08D?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Nuxt](https://img.shields.io/badge/Nuxt-3.13-00DC82?style=flat-square&logo=nuxt.js&logoColor=white)](https://nuxt.com)
+[![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?style=flat-square&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
 
 A modern, minimalist product hub featuring a dark industrial cyberpunk design. Perfect for showcasing API products, tools, and services with an emphasis on functional minimalism and intuitive user experience.
 
@@ -33,8 +34,8 @@ See [kikuai-site-nuxt/README.md](./kikuai-site-nuxt/README.md) for detailed setu
 
 ```bash
 cd kikuai-site-nuxt
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## 🎨 Design Philosophy
