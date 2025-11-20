@@ -14,8 +14,6 @@ const requiredEnvVars = [
 ]
 
 const optionalEnvVars = [
-  'DATABASE_URL',
-  'REDIS_URL',
   'PADDLE_VENDOR_ID',
   'PADDLE_API_KEY',
   'PADDLE_PUBLIC_KEY',
@@ -64,24 +62,10 @@ for (const varName of optionalEnvVars) {
 // Validate formats
 console.log('\n🔍 Validating formats...')
 
-// DATABASE_URL
-const dbUrl = process.env.DATABASE_URL
-if (dbUrl && !dbUrl.startsWith('postgresql://')) {
-  console.log('  ⚠️  DATABASE_URL should start with "postgresql://"')
-  hasWarnings = true
-}
-
 // OPENROUTER_API_KEY
 const openrouterKey = process.env.OPENROUTER_API_KEY
 if (openrouterKey && !openrouterKey.startsWith('sk-or-v1-')) {
   console.log('  ⚠️  OPENROUTER_API_KEY should start with "sk-or-v1-"')
-  hasWarnings = true
-}
-
-// REDIS_URL
-const redisUrl = process.env.REDIS_URL
-if (redisUrl && !redisUrl.startsWith('redis://')) {
-  console.log('  ⚠️  REDIS_URL should start with "redis://"')
   hasWarnings = true
 }
 

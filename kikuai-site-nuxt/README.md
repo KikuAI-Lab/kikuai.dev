@@ -29,7 +29,6 @@ A modern, minimalist product hub featuring a dark industrial cyberpunk design. P
 - **UI:** [Vue 3](https://vuejs.org) + [Tailwind CSS](https://tailwindcss.com)
 - **Language:** [TypeScript](https://www.typescriptlang.org)
 - **Deployment:** [Vercel](https://vercel.com)
-- **Database:** PostgreSQL (via Prisma)
 - **Styling:** Custom CSS with CSS variables for theming
 
 ## 🚀 Quick Start
@@ -60,14 +59,8 @@ Visit `http://localhost:3000` to see the site.
 Create a `.env` file in the `kikuai-site-nuxt` directory:
 
 ```env
-# OpenRouter API (for chat feature)
+# OpenRouter API (required for chat feature)
 OPENROUTER_API_KEY=your_key_here
-
-# Database (optional, for API features)
-DATABASE_URL=your_database_url
-
-# Redis (optional, for rate limiting)
-REDIS_URL=your_redis_url
 ```
 
 ## 📦 Project Structure
@@ -114,8 +107,6 @@ The site is automatically deployed to Vercel on push to the `main` branch.
 2. Vercel will auto-detect Nuxt.js framework
 3. Add environment variables in Vercel dashboard:
    - `OPENROUTER_API_KEY` (required for chat feature)
-   - `DATABASE_URL` (optional, for API features)
-   - `REDIS_URL` (optional, for rate limiting)
 4. Deploy!
 
 ### DNS Configuration (Namecheap)
