@@ -5,13 +5,6 @@
     <div class="ambient-glow"></div>
     
     <section class="about-content" :class="{ 'content-loaded': loaded }">
-      <div class="about-image-container">
-        <div class="about-image-wrapper">
-          <img src="/about.png" alt="KikuAI Lab" class="about-image" />
-          <div class="about-image-gradient"></div>
-        </div>
-      </div>
-
       <h1 class="about-heading">
         <span class="prefix">>></span>
         ABOUT
@@ -68,7 +61,6 @@ useHead({
     { name: 'description', content: 'KikuAI Lab builds APIs that turn noisy data into clear, actionable signals. Our tools process unstructured information and return clean, structured outputs.' },
     { property: 'og:title', content: 'About | KikuAI Lab' },
     { property: 'og:description', content: 'KikuAI Lab builds APIs that turn noisy data into clear, actionable signals. Our tools process unstructured information and return clean, structured outputs.' },
-    { property: 'og:image', content: 'https://kikuai.dev/about.png' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://kikuai.dev/about' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -178,16 +170,6 @@ useHead({
   transform: translateY(0);
 }
 
-.about-image-container {
-  margin-bottom: 4rem;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeInUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
-  position: relative;
-  padding: 2rem;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -197,34 +179,6 @@ useHead({
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.about-image-wrapper {
-  position: relative;
-  max-width: 70%;
-  width: 70%;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.about-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 2px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.about-image-gradient {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: 
-    linear-gradient(to top, var(--bg-main) 0%, transparent 15%),
-    linear-gradient(to bottom, var(--bg-main) 0%, transparent 15%),
-    linear-gradient(to left, var(--bg-main) 0%, transparent 12%),
-    linear-gradient(to right, var(--bg-main) 0%, transparent 12%);
-  border-radius: 2px;
 }
 
 .about-heading {
@@ -324,11 +278,6 @@ useHead({
   .about-content {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-  
-  .about-image {
-    max-width: 90%;
-    width: 90%;
   }
 }
 </style>
