@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "kaida",
+    "name": "KAIDA",
+    "alternateName": "KikuAI Data Analysis",
+    "oneLiner": "Core engine for large-scale pattern analysis and automated insights",
+    "status": "soon",
+    "hasApi": true,
+    "version": "1.0.0",
+    "releaseLabel": "Release: February 2026",
+    "links": {
+      "docs": "https://docs.kikuai.dev/kaida",
+      "github": "https://github.com/KikuAI-lab/kaida",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/kaida"
+    },
+    "og": {
+      "title": "KAIDA — Core data analysis engine",
+      "image": "/og/kaida.png"
+    }
+  },
+  {
+    "slug": "momentumai",
+    "name": "MomentumAI",
+    "alternateName": "MAI",
+    "oneLiner": "Market event detection for trading flows",
+    "status": "soon",
+    "hasApi": false,
+    "version": "0.5.0",
+    "releaseLabel": "Release: April 2026",
+    "links": {
+      "docs": "https://docs.kikuai.dev/momentumai",
+      "github": "https://github.com/KikuAI-lab/momentumai",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/momentumai"
+    },
+    "og": {
+      "title": "MomentumAI — Market event detection",
+      "image": "/og/momentumai.png"
+    }
+  },
+  {
+    "slug": "insightsocial",
+    "name": "InsightSocial",
+    "alternateName": "IS",
+    "oneLiner": "Topic, trend and anomaly mapping for social streams",
+    "status": "soon",
+    "hasApi": false,
+    "version": "0.5.0",
+    "releaseLabel": "Release: March 2026",
+    "links": {
+      "docs": "https://docs.kikuai.dev/insightsocial",
+      "github": "https://github.com/KikuAI-lab/insightsocial",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/insightsocial"
+    },
+    "og": {
+      "title": "InsightSocial — Topic and trend mapping",
+      "image": "/og/insightsocial.png"
+    }
+  },
+  {
+    "slug": "datafold",
+    "name": "DataFold",
+    "alternateName": "DF",
+    "oneLiner": "Dataset comparison and structural drift detection",
+    "status": "soon",
+    "hasApi": true,
+    "version": "0.3.0",
+    "releaseLabel": "Release: May 2026",
+    "links": {
+      "docs": "https://docs.kikuai.dev/datafold",
+      "github": "https://github.com/KikuAI-lab/datafold",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/datafold"
+    },
+    "og": {
+      "title": "DataFold — Dataset comparison",
+      "image": "/og/datafold.png"
+    }
+  },
+  {
+    "slug": "fynx",
+    "name": "Fynx",
+    "alternateName": "Fynx",
+    "oneLiner": "Content classification for higher-quality feeds",
+    "status": "soon",
+    "hasApi": true,
+    "version": "0.2.0",
+    "releaseLabel": "Release: June 2026",
+    "links": {
+      "docs": "https://docs.kikuai.dev/fynx",
+      "github": "https://github.com/KikuAI-lab/fynx",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/fynx"
+    },
+    "og": {
+      "title": "Fynx — Content classification",
+      "image": "/og/fynx.png"
+    }
+  }
+]

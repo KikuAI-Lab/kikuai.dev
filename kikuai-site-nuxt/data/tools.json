@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "reliapi",
+    "name": "ReliAPI",
+    "alternateName": "ReliAPI",
+    "oneLiner": "Request retries, caching, deduplication and circuit-breaking for any API",
+    "status": "live",
+    "hasApi": true,
+    "version": "1.0.0",
+    "links": {
+      "docs": "https://github.com/KikuAI-Lab/reliapi/wiki",
+      "github": "https://github.com/KikuAI-lab/reliapi",
+      "rapidapi": null,
+      "demo": "https://kikuai-lab.github.io/reliapi/"
+    },
+    "og": {
+      "title": "ReliAPI — Request retries and caching",
+      "image": "/og/reliapi.png"
+    }
+  },
+  {
+    "slug": "routellm",
+    "name": "RouteLLM",
+    "alternateName": "RouteLLM",
+    "oneLiner": "Stable routing, fallback and quota control for multiple LLM providers",
+    "status": "soon",
+    "hasApi": true,
+    "version": "1.0.0",
+    "releaseLabel": "Release: November 2025",
+    "links": {
+      "docs": "https://docs.kikuai.dev/routellm",
+      "github": "https://github.com/KikuAI-lab/routellm",
+      "rapidapi": null,
+      "demo": "https://kikuai.dev/api/demo/routellm"
+    },
+    "og": {
+      "title": "RouteLLM — Stable LLM routing",
+      "image": "/og/routellm.png"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Folded K mark - dark version for light backgrounds -->
+  <g transform="translate(16.67, 16.67)">
+    <path d="M0 0 L33.33 33.33 L0 66.67 M33.33 33.33 L66.67 0 M33.33 33.33 L66.67 66.67" 
+          stroke="#111315" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          fill="none"/>
+  </g>
+</svg>

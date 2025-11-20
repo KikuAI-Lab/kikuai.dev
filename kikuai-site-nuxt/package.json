@@ -1,0 +1,48 @@
+{
+  "name": "kikuai-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "prisma generate || true",
+    "analyze": "nuxt build --analyze",
+    "size:budget": "node scripts/size-budget.mjs",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:seed": "tsx prisma/seeds/products.ts",
+    "check:env": "tsx scripts/check-env.ts",
+    "check:oauth": "tsx scripts/check-oauth.ts",
+    "test:connections": "tsx scripts/test-connections.ts",
+    "generate:api-secret": "tsx scripts/generate-api-secret.ts",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "@nuxtjs/turnstile": "^1.0.0",
+    "@prisma/client": "^5.19.0",
+    "ioredis": "^5.3.2",
+    "lucide-vue-next": "^0.553.0",
+    "nuxt": "^3.13.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^3.0.0",
+    "@nuxtjs/plausible": "^2.0.1",
+    "@nuxtjs/seo": "^3.2.2",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@playwright/test": "^1.40.0",
+    "@vue/test-utils": "^2.4.0",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "prisma": "^5.19.0",
+    "tailwindcss": "^3.4.18",
+    "tsx": "^4.20.6",
+    "typescript": "^5.5.0",
+    "vitest": "^1.0.0",
+    "pinia": "^2.1.0"
+  }
+}

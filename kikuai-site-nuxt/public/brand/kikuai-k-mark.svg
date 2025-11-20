@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Folded K mark - white version for dark backgrounds -->
+  <!-- Based on Logo KikuAI.png - folded K design -->
+  <g transform="translate(16.67, 16.67)">
+    <!-- Left vertical line -->
+    <path d="M0 0 L0 66.67" 
+          stroke="white" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          fill="none"/>
+    <!-- Diagonal lines forming K -->
+    <path d="M0 33.33 L33.33 0" 
+          stroke="white" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          fill="none"/>
+    <path d="M0 33.33 L33.33 66.67" 
+          stroke="white" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          fill="none"/>
+    <!-- Folded part (right side) -->
+    <path d="M33.33 0 L66.67 0 L66.67 66.67 L33.33 66.67" 
+          stroke="white" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+</svg>

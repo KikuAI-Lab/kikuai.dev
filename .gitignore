@@ -1,0 +1,43 @@
+# Node
+node_modules/
+.next/
+
+# Python
+__pycache__/
+.venv/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+
+# Ansible
+*.retry
+
+# Secrets and env
+.env
+.env.*
+secrets/
+.secrets/
+.age-key*
+
+# Logs
+logs/
+*.log
+
+# MacOS
+.DS_Store
+**/.DS_Store
+
+# Test results and artifacts
+test-results/
+.lighthouseci/
+*.log
+artifacts/
+# Build artifacts
+kikuai-site-nuxt/dist/
+kikuai-site-nuxt/.nuxt/
+kikuai-site-nuxt/.output/
+

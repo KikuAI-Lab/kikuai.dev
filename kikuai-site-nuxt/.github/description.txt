@@ -1,0 +1,2 @@
+Minimalist dark-themed product hub and portfolio showcasing autonomous AI APIs. Built with Nuxt 3, Vue 3, TypeScript. Features industrial cyberpunk design, functional minimalism, and intuitive UX. Perfect for product showcases, API hubs, and dark-themed portfolios.
+
